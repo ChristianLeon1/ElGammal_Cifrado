@@ -26,7 +26,7 @@ El documento adjunto describe el proceso en detalle, pero a grandes rasgos el al
     * Bob le envía el par ordenado $(c_1, c_2)$ a Alicia.
 4.  **Descifrado del mensaje**:
     * Alicia recibe el par $(c_1, c_2)$ y usa su clave privada $a$ para descifrar el mensaje.
-    * Primero, calcula un valor auxiliar <!-- $x \equiv (c_1^a)^{-1} \pmod{p}$ -->. Esto se hace con el algoritmo 2.4.2 para calcular $c^{p-1-a}(mod~p)$, ya que $(c^{a})^{-1}\equiv c^{p-1-a}(mod~p)$.
+    * Primero, calcula un valor auxiliar $x \equiv (c_1^a)^{-1} \pmod{p}$. Esto se hace con el algoritmo 2.4.2 para calcular $c^{p-1-a}(mod~p)$, ya que $(c^{a})^{-1}\equiv c^{p-1-a}(mod~p)$.
     * Finalmente, recupera el mensaje original $m$ calculando $x \cdot c_2 \pmod{p}$.
 
 ## 💻 Implementación en C
@@ -38,4 +38,4 @@ El código fuente implementa las funciones clave del algoritmo:
 * `DescifradoGammal`: Descifra el par de valores cifrados para recuperar el mensaje original.
 * `FastPot`: Es una función auxiliar que implementa el **algoritmo rápido para la potenciación modular**, esencial para calcular las potencias de forma eficiente.
 
-Este código está estructurado para cifrar y descifrar un mensaje carácter por carácter, utilizando las funciones `charToInt` e `IntToChar` para la codificación y decodificación[cite: 185, 186].
+Este código está estructurado para cifrar y descifrar un mensaje carácter por carácter, utilizando las funciones `charToInt` e `IntToChar` para la codificación y decodificación.
