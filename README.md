@@ -14,12 +14,12 @@ El algoritmo también se relaciona estrechamente con el **intercambio de clave D
 
 El documento adjunto describe el proceso en detalle, pero a grandes rasgos el algoritmo de ElGamal funciona así:
 
-1.  **Selección de parámetros públicos**: Alicia elige un número primo grande $p$ y un elemento primitivo $g$ de $\mathbb{Z}_{p}$. Ambos números serán públicos[cite: 146].
+1.  **Selección de parámetros públicos**: Alicia elige un número primo grande $p$ y un elemento primitivo $g$ de $\mathbb{Z}_{p}$. Ambos números serán públicos.
 2.  **Generación de claves**:
     * Alicia escoge un número $a$ en el rango $[[1, p-2]]$, el cual funcionará como clave privada.
     * La clave pública de Alicia, $A$, se calcula como $A \equiv g^a \pmod{p}$.
 3.  **Cifrado del mensaje**:
-    * Bob, que quiere enviar un mensaje $m$ a Alicia, escoge un número aleatorio $k$ que se utiliza para cifrar el mensaje[cite: 150, 154].
+    * Bob, que quiere enviar un mensaje $m$ a Alicia, escoge un número aleatorio $k$ que se utiliza para cifrar el mensaje.
     * Bob calcula dos valores, $c_1$ y $c_2$:
         * $c_1 = g^k \pmod{p}$ 
         * $c_2 = m \cdot A^k \pmod{p}$
